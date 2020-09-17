@@ -10,6 +10,13 @@ class CustomText(models.Model):
     title = models.CharField(
         max_length=150,
     )
+    this_is_fk = models.ForeignKey(
+        "users.User",
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True,
+        related_name="customtext_this_is_fk",
+    )
 
     def __str__(self):
         return self.title

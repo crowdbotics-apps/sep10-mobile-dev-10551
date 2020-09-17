@@ -9,13 +9,14 @@ from django.db import models
 class CustomText(models.Model):
     title = models.CharField(
         max_length=150,
+        blank=True,
     )
-    this_is_fk = models.ForeignKey(
+    this_is_fk_updated = models.ForeignKey(
         "users.User",
-        on_delete=models.CASCADE,
         null=True,
         blank=True,
-        related_name="customtext_this_is_fk",
+        on_delete=models.CASCADE,
+        related_name="customtext_this_is_fk_updated",
     )
 
     def __str__(self):

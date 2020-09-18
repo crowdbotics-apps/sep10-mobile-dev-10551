@@ -55,10 +55,10 @@ export class __Blank extends React.Component {
       }}
     >
       <Slider
-        value={50}
+        value={52}
         minimumValue={0}
-        maximumValue={100}
-        step={1}
+        maximumValue={110}
+        step={5}
         disabled={false}
         maximumTrackTintColor="#E4E7ED"
         minimumTrackTintColor="#3366FF"

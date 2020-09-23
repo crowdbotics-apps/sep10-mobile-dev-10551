@@ -15,7 +15,7 @@ import Slider from "@react-native-community/slider"
 
 import { SlideMenuIcon } from "../../../navigator/slideMenuIcon"
 
-// I want to commit a comment. Here more comment change.
+// I want to commit a comment. Here more comment change. sdsdad
 export class _Blank extends React.Component {
   static navigationOptions = ({ navigation }) => {
     return {

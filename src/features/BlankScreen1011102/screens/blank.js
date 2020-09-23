@@ -19,7 +19,7 @@ export class __Blank extends React.Component {
   static navigationOptions = ({ navigation }) => {
     return { headerLeft: <SlideMenuIcon navigationProps={navigation} /> }
   }
-  state = {}
+  state = {   }
   render = () => <View style={this.props.themedStyle.View_1} />
 }
 

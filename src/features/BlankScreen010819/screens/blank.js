@@ -12,6 +12,7 @@ import {
   Datepicker
 } from "react-native-ui-kitten"
 import Slider from "@react-native-community/slider"
+
 //commit dfdgdfgdfg
 import { SlideMenuIcon } from "../../../navigator/slideMenuIcon"
 
@@ -22,7 +23,7 @@ export class _Blank extends React.Component {
     }
   }
 
-  state = { Input_4: "" }
+  state = {}
 
   render = () => (
     <View style={this.props.themedStyle.View_1}>
@@ -39,20 +40,6 @@ export class _Blank extends React.Component {
         Press me!
       </Button>
       <Text style={this.props.themedStyle.Text_3}>Sample text content</Text>
-      <Input
-        placeholder="Number Input Placeholder"
-        editable={true}
-        keyboardType="numeric"
-        textStyle={{
-          fontSize: 12,
-          color: "#000000",
-          textAlign: "left",
-          fontFamily: "Roboto-Regular"
-        }}
-        style={this.props.themedStyle.Input_4}
-        value={this.state.Input_4}
-        onChangeText={nextValue => this.setState({ Input_4: nextValue })}
-      />
     </View>
   )
 }
@@ -122,36 +109,6 @@ export default Blank = withStyles(_Blank, theme => ({
     letterSpacing: 0
   },
   Text_3: {
-    marginLeft: 0,
-    marginRight: 0,
-    marginTop: 5,
-    marginBottom: 5,
-    paddingLeft: 5,
-    paddingRight: 5,
-    paddingTop: 5,
-    paddingBottom: 5,
-    overflow: "visible",
-    textAlign: "left",
-    verticalAlign: "baseline",
-    fontSize: 12,
-    color: "#000000",
-    backgroundColor: "#ffffff",
-    fontFamily: "Roboto-Regular",
-    borderColor: "#000000",
-    borderStyle: "solid",
-    borderWidth: 0,
-    borderLeftWidth: 0,
-    borderRightWidth: 0,
-    borderTopWidth: 0,
-    borderBottomWidth: 0,
-    borderRadius: 0,
-    textDecorationLine: "none",
-    textTransform: "none",
-    lineHeight: 12,
-    letterSpacing: 0
-  },
-  Input_4: {
-    width: "100%",
     marginLeft: 0,
     marginRight: 0,
     marginTop: 5,

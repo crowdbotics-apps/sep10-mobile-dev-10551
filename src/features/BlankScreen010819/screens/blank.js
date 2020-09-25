@@ -12,7 +12,7 @@ import {
   Datepicker
 } from "react-native-ui-kitten"
 import Slider from "@react-native-community/slider"
-//commit
+//commit dfdgdfgdfg
 import { SlideMenuIcon } from "../../../navigator/slideMenuIcon"
 
 export class _Blank extends React.Component {

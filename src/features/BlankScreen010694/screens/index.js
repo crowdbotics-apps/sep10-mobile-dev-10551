@@ -1,44 +1,58 @@
-import React, {PureComponent} from 'react';
-import {View, Platform, StyleSheet} from 'react-native';
-import {Text, Button} from 'react-native-ui-kitten';
+import React from "react"
+import { View, Image, ImageBackground } from "react-native"
+import {
+  withStyles,
+  Text,
+  Button,
+  CheckBox,
+  Radio,
+  Toggle,
+  Icon,
+  Input,
+  Datepicker,
+  ApplicationProvider
+} from "react-native-ui-kitten"
+import Slider from "@react-native-community/slider"
+import { SlideMenuIcon } from "../../../navigator/slideMenuIcon"
+import { connect, Provider} from "react-redux"
+import {store} from "./store"
+import { mapping, light as lightTheme } from '@eva-design/eva';
 
-export default class Root extends PureComponent {
-  static navigationOptions = {
-    title: 'Blank Blueprint'.toUpperCase(),
-    headerBackTitle: null,
-  };
-
-  render() {
-    return (
-      <View style={styles.container}>
-        <Button
-          onPress={() => this.props.navigation.navigate('Blank')}
-          style={styles.item}>
-          Blank Screen
-        </Button>
-
-        <Button
-          onPress={() => this.props.navigation.navigate('SplashScreen')}
-          style={styles.item}>
-          Main Menu
-        </Button>
-      </View>
-    );
+export class _Blank extends React.Component {
+  static navigationOptions = ({ navigation }) => {
+    return { headerLeft: <SlideMenuIcon navigationProps={navigation} /> }
   }
+  state = {}
+  render = () => (
+    <View style={styles.View_1}>
+      <View style={styles.View_3}>
+        <Text style={styles.Text_5}>Sample text content</Text>
+        <Button
+          title="Press me!"
+          color="#3366FF"
+          style={styles.Button_7}
+          onPress={() => alert("Pressed!")}
+        />
+      </View>
+    </View>
+  )
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#f5f5f5',
-    padding: 10,
-  },
-  statusbar: {
-    height: Platform.select({ios: 20, android: 0}),
-  },
-  item: {
-    borderBottomWidth: 1,
-    marginTop: 20,
-    borderBottomColor: 'gray',
-  },
-});
+const Blank = withStyles(_Blank, theme => ({
+  container: { backgroundColor: theme["color-basic-100"] }
+}))
+
+function mapStateToProps(state) {
+  return { state: state.apiReducer }
+}
+const actionCreators = {}
+const App = connect(mapStateToProps, actionCreators)(Blank)
+const AppWithStore = () => (
+  <Provider store={store}>
+    <ApplicationProvider mapping={mapping} theme={lightTheme}>
+    <App />
+    </ApplicationProvider>
+  </Provider>
+)
+
+export default AppWithStore
